@@ -1,0 +1,10 @@
+[package]
+name = "rust_bencher"
+version = "0.1.0"
+authors = ["Alexey Golubev <dr.freecx@gmail.com>"]
+
+[[example]]
+name = "test"
+
+[dependencies]
+time = "0.1"
