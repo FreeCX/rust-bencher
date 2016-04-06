@@ -11,7 +11,7 @@ pub struct Bencher {
 
 impl fmt::Display for TimeResult {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{} +/- {} µs", self.0, self.1)
+        write!(f, "{} +/- {} ns", self.0, self.1)
     }
 }
 
@@ -38,7 +38,7 @@ impl Bencher {
     }
     fn recollect(&mut self, data: Vec<Duration>) {
         self.data = data.iter()
-                        .filter_map(|x| x.num_microseconds())
+                        .filter_map(|x| x.num_nanoseconds())
                         .collect();
     }
     pub fn s_bench<F>(&mut self, f: F) -> TimeResult
